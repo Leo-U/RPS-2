@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="Rock">Rock</button>
+    <button id="Paper">Paper</button>
+    <button id="Scissors">Scissors</button>
+    <div id = scoreboard>
+        <div id="YourWins">Your Wins: 0</div>
+        <div id="ComputerWins">Computer Wins: 0</div>
+    </div>
+    <div id="results"></div>
+    <script>
+        // create function computerPlay that will randomly return 'Rock', 'Paper', or 'Scissors'.
+
+       function computerPlay(){
+        let number =  Math.floor(Math.random() * 3);
+        if (number === 0) {
+            return computerSelection = "Rock";
+        } else if (number === 1) {
+            return computerSelection = "Paper";
+        } else {
+            return computerSelection = "Scissors";
+        }
+       }
+
+       /* write a function that plays a single round of RPS, having two parameters - playerSelection and computerSelection, and that returns a string declaring whether you win or lose. Make the function case insensitive so that users can 
+       input their answers in any case. */
+       
+       function playRound(playerSelection, computerSelection) {
+           playerSelection = playerSelection.toUpperCase();
+           computerSelection = computerSelection.toUpperCase();
+           let resultText = document.querySelector('#results');
+
+        if (playerSelection === computerSelection) {
+            resultText.textContent = "Computer plays the same. Round tied!";
+            let result = 0;
+            return result;
+        } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
+            resultText.textContent = "Computer plays Paper. You lost the round!";
+            let result = -1;
+            return result;
+        } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
+            resultText.textContent = "Computer plays Scissors. You won the round!";
+            let result = 1;
+            return result;
+        } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
+            resultText.textContent = "Computer plays Rock. You won the round!";
+            let result = 1;
+            return result;
+        } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
+            resultText.textContent = "Computer plays Scissors. You lost the round!";
+            let result = -1;
+            return result;
+        } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
+            resultText.textContent = "Computer plays Rock! You lost the round!";
+            let result = -1;
+            return result;
+        } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
+            resultText.textContent = "Computer plays Paper. You won the round!";
+            let result = 1;
+            return result;
+        } else {
+            resultText.textContent = "Invalid entry! You lost the round!";
+            let result = -1;
+            return result;
+        }
+       }
+
+       /* Add an event listener to the buttons that calls your playRound function with the correct playerSelection every time a button is clicked. */
+
+       const buttonRock = document.querySelector("#Rock");
+       const buttonPaper = document.querySelector("#Paper");
+       const buttonScissors = document.querySelector("#Scissors");
+
+       buttonRock.addEventListener('click', event => {
+           computerPlay();
+           playRound('rock', computerSelection);
+           });
+
+       buttonPaper.addEventListener('click', event => {
+        computerPlay();
+           playRound('paper', computerSelection);
+        });
+
+        buttonScissors.addEventListener('click', event => {
+            computerPlay();
+           playRound('scissors', computerSelection);
+        });
+
+
+       /* write a function called game(). Use the previous function inside of this one to play a 5 round game 
+       that keeps score and reports a winner or loser at the end. */
+       
+    // function game() {
+        
+    //     function round1() {
+    //         computerPlay();
+    //         let playerSelection = window.prompt("Play Round 1/5 of Rock Paper Scissors! Open browser console to see game progress.");
+    //         let score = playRound(playerSelection, computerSelection);
+    //         return score;
+    //     }
+        
+    //     let score = round1();
+    //     console.log(score);
+
+    //     function round2() {
+    //         computerPlay();
+    //         let playerSelection = window.prompt("Play Round 2/5!");
+    //         let score = playRound(playerSelection, computerSelection);
+    //         return score;
+    //     }
+
+    //     score = score + round2();
+    //     console.log(score);
+        
+    //     function round3() {
+    //         computerPlay();
+    //         let playerSelection = window.prompt("Play Round 3/5!");
+    //         let score = playRound(playerSelection, computerSelection);
+    //         return score;    
+    //     }
+        
+    //     score = score + round3();
+    //     console.log(score);
+
+    //     if (score === 3) {
+    //         console.log("You won the first 3 rounds and won the game automatically.")
+    //     } else if (score === -3) {
+    //         console.log("You lost the first 3 rounds and lost the game automatically.")
+    //     } else {
+
+    //         function round4() {
+    //             computerPlay();
+    //             let playerSelection = window.prompt("Play Round 4/5!");
+    //             let score = playRound(playerSelection, computerSelection);
+    //             return score;    
+    //         }
+            
+    //         score = score + round4();
+    //         console.log(score);
+
+    //         if (score === 2) {
+    //             console.log("Your score is 2 on round 4. You won the game automatically.")
+    //         } else if (score === 3) {
+    //             console.log("Your score is 3 on round 4. You won the game automatically.")
+    //         } else if (score === -2) {
+    //             console.log("Your score is -2 on round 4. You lost the game automatically.")
+    //         } else if (score === -3) {
+    //             console.log("Your score is -3 on round 4. You lost the game automatically.")
+    //         } else {
+
+    //             function round5() {
+    //                 computerPlay();
+    //                 let playerSelection = window.prompt("Play Round 5!");
+    //                 let score = playRound(playerSelection, computerSelection);
+    //                 return score;    
+    //             }
+                
+    //             score = score + round5();
+                
+    //             if (score > 0) {
+    //                 console.log(score);
+    //                 console.log("You won the game!")
+    //             } else if (score < 0) {
+    //                 console.log(score);
+    //                 console.log("You lost the game!")
+    //             } else {
+    //                 console.log(score);
+    //                 console.log("You tied the game!")
+    //             }
+    //         }
+    //     }
+    // }
+
+    //    game();
+    </script>
+</body>
+</html>
