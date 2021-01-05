@@ -91,8 +91,8 @@
 
        const buttons = document.querySelectorAll('.button');
 
-       buttons.forEach(query => {
-           query.addEventListener('click', event => {
+       buttons.forEach(button => {
+           button.addEventListener('click', event => {
                computerPlay();
                playRound(event.target.textContent, computerSelection);
            })
@@ -108,16 +108,16 @@
         
         const allButtons = document.querySelectorAll('button');
         
-        allButtons.forEach(query => {
-            query.style.backgroundColor = 'white';
-            query.style.borderRadius = '2px';
-            query.style.height = '40px';
-            query.style.fontSize = '19px'
-            query.addEventListener('mouseenter', event => {
+        allButtons.forEach(button => {
+            button.style.backgroundColor = 'white';
+            button.style.borderRadius = '2px';
+            button.style.height = '40px';
+            button.style.fontSize = '19px'
+            button.addEventListener('mouseenter', event => {
                 event.target.style.backgroundColor = 'black';
                 event.target.style.color = 'white';
             });
-            query.addEventListener('mouseleave', event => {
+            button.addEventListener('mouseleave', event => {
                 event.target.style.backgroundColor = 'white';
                 event.target.style.color = 'black';
             });
