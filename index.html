@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body style="position: fixed; top: 50%; left: 50%; margin-top: -277.075px; margin-left: -139.635px; font-size: 30px;">
-    <h4>Play 5 Rounds to Win</h4>
+    <p>Play 5 Rounds to Win</p>
     <div id="buttonDiv" style="margin-bottom: 22px;">
     <button id="Rock" class="button">Rock</button>
     <button id="Paper" class="button">Paper</button>
@@ -111,8 +111,8 @@
         allButtons.forEach(query => {
             query.style.backgroundColor = 'white';
             query.style.borderRadius = '2px';
-            query.style.height = '30px';
-            query.style.fontSize = '17px'
+            query.style.height = '40px';
+            query.style.fontSize = '19px'
             query.addEventListener('mouseenter', event => {
                 event.target.style.backgroundColor = 'black';
                 event.target.style.color = 'white';
