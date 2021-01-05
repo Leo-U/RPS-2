@@ -16,46 +16,39 @@ function computerPlay(){
 
     if (playerSelection === computerSelection && yourWins.textContent < 5 && computerWins.textContent < 5) {
         resultText.textContent = "Computer plays the same. Round tied!";
-        let result = 0;
     } else if (playerSelection === "ROCK" && computerSelection === "PAPER" && yourWins.textContent < 5 && computerWins.textContent < 5) {
         resultText.textContent = "Computer plays Paper. You lost the round!";
-        let result = 1;
-        computerWins.textContent = +computerWins.textContent + result;
+        computerWins.textContent = +computerWins.textContent + 1;
         if (computerWins.textContent >= 5) {
             resultText.textContent = "Computer plays Paper. You have lost the game!";
         }
     } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS" && yourWins.textContent < 5 && computerWins.textContent < 5) {
         resultText.textContent = "Computer plays Scissors. You won the round!";
-        let result = 1;
-        yourWins.textContent = +yourWins.textContent + result;
+        yourWins.textContent = +yourWins.textContent + 1;
         if (yourWins.textContent >= 5) {
             resultText.textContent = "Computer plays Scissors. You have won the game!";
         }
     } else if (playerSelection === "PAPER" && computerSelection === "ROCK" && yourWins.textContent < 5 && computerWins.textContent < 5) {
         resultText.textContent = "Computer plays Rock. You won the round!";
-        let result = 1;
-        yourWins.textContent = +yourWins.textContent + result;
+        yourWins.textContent = +yourWins.textContent + 1;
         if (yourWins.textContent >= 5) {
             resultText.textContent = "Computer plays Rock. You have won the game!"
         }
     } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS" && yourWins.textContent < 5 && computerWins.textContent < 5) {
         resultText.textContent = "Computer plays Scissors. You lost the round!";
-        let result = 1;
-        computerWins.textContent = +computerWins.textContent + result;
+        computerWins.textContent = +computerWins.textContent + 1;
         if (computerWins.textContent >= 5) {
             resultText.textContent = "Computer plays Scissors. You have lost the game!"
         }
     } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK" && yourWins.textContent < 5 && computerWins.textContent < 5) {
         resultText.textContent = "Computer plays Rock! You lost the round!";
-        let result = 1;
-        computerWins.textContent = +computerWins.textContent + result;
+        computerWins.textContent = +computerWins.textContent + 1;
         if (computerWins.textContent >= 5) {
             resultText.textContent = "Computer plays Rock. You have lost the game!"
         }
     } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER" && yourWins.textContent < 5 && computerWins.textContent < 5) {
         resultText.textContent = "Computer plays Paper. You won the round!";
-        let result = 1;
-        yourWins.textContent = +yourWins.textContent + result;
+        yourWins.textContent = +yourWins.textContent + 1;
         if (yourWins.textContent >= 5) {
             resultText.textContent = "Computer plays Paper. You have won the game!"
         }
